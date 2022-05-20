@@ -88,7 +88,6 @@ def evaluate_task(desk_size, solver):
 
 
 if __name__ == "__main__":
-    desk_sizes = [list(np.random.randint(5, high, size=2)) for high in list(range(10, 110))]
+    desk_sizes = [list(np.random.randint(5, high, size=2)) for high in list(range(10, 110))*1]
     scores = [evaluate_task(desk_size, solution.main) for desk_size in desk_sizes]
-    score = sum(scores) / len(scores)
-    print(f"{score=}")
+    print(f"{np.mean(scores)=}, {np.std(scores)=}, {len(scores)=}")
